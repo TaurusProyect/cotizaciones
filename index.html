@@ -1,13 +1,52 @@
-Cotizador
-Catálogo de productos
-Agregar producto
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cotizador</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1 id="titulo">Cotizador</h1></header>
+<main>
+  <section>
+    <h2>Catálogo de productos</h2>
+    <form id="fProd" class="row">
+      <input id="pNombre" placeholder="Nombre del producto" required>
+      <input id="pPrecio" type="number" min="0" step="any" placeholder="Precio" required>
+      <button>Agregar producto</button>
+    </form>
+    <div class="scroll"><table id="tProd"></table></div>
+    <div class="row">
+      <button id="bExp" class="sec" type="button">Exportar catálogo</button>
+      <label class="btn sec">Importar catálogo<input id="fImp" type="file" accept=".json" hidden></label>
+    </div>
+    <p class="hint">El catálogo se guarda en este navegador. Exporta una copia de respaldo de vez en cuando.</p>
+  </section>
 
-Exportar catálogo Importar catálogo
-El catálogo se guarda en este navegador. Exporta una copia de respaldo de vez en cuando.
-Nueva cotización
+  <section>
+    <h2>Nueva cotización</h2>
+    <div class="grid">
+      <input id="cNombre" placeholder="Nombre del cliente">
+      <input id="cRut" placeholder="RUT o ID del cliente">
+      <input id="cContacto" placeholder="Email o teléfono">
+    </div>
+    <div class="row">
+      <select id="sProd"></select>
+      <input id="qCant" type="number" min="1" value="1" aria-label="Cantidad">
+      <button id="bAdd" type="button">Añadir a la cotización</button>
+    </div>
+    <div class="scroll"><table id="tCot"></table></div>
+    <label class="desc">Descuento (%) <input id="desc" type="number" min="0" max="100" step="any" value="0"></label>
+    <div id="totales"></div>
+    <button id="bPdf" type="button">Descargar cotización en PDF</button>
+  </section>
+</main>
 
-Añadir a la cotización
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
 
-Descuento (%)
-
-Descargar cotización en PDF
