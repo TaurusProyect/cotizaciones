@@ -1,0 +1,30 @@
+:root { --color: #1f4e79; --bg: #f7f6f2; --fg: #1d1d1b; --line: #d9d6cc; --card: #fff; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #16181b; --fg: #ecebe6; --line: #33363b; --card: #1e2125; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; }
+header { background: var(--color); color: #fff; padding: 18px 20px; }
+h1 { margin: 0; font-size: 1.4rem; }
+h2 { font-size: 1.1rem; margin: 0 0 12px; }
+main { max-width: 760px; margin: 0 auto; padding: 16px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.row, .grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.grid input { flex: 1 1 180px; }
+input, select { font: inherit; padding: 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); min-width: 0; }
+.row input:not([type=number]), select { flex: 1 1 200px; }
+input[type=number] { width: 110px; }
+button, .btn { font: inherit; padding: 8px 14px; border: 0; border-radius: 6px; background: var(--color); color: #fff; cursor: pointer; }
+button.sec, .btn.sec { background: transparent; color: var(--color); border: 1px solid var(--color); }
+button.x, button.xl { background: transparent; color: #b3261e; padding: 4px 8px; }
+:focus-visible { outline: 2px solid var(--color); outline-offset: 2px; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+td input[type=number] { width: 90px; }
+.hint { color: #777; font-size: .85rem; }
+.desc { display: block; margin: 12px 0; }
+#totales { margin: 12px 0; max-width: 320px; margin-left: auto; }
+#totales div { display: flex; justify-content: space-between; padding: 2px 0; }
+#totales .total { font-weight: 700; font-size: 1.15rem; border-top: 2px solid var(--color); margin-top: 6px; padding-top: 6px; }
+#bPdf { width: 100%; padding: 12px; font-size: 1.05rem; }
